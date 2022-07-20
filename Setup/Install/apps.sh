@@ -1,3 +1,37 @@
+#!/bin/bash
+
+#CUDA INSTALLATION 11.6
+
+function Help
+{
+   # Displays Help
+   echo "This script install GIT, CURL, GPARTED, HTOP, ZOOM, DISCOD, VSCODE." 
+   echo
+   echo "Syntax: apps.sh [-h]"
+   echo "Options:"
+   echo "-h     Help function"
+   echo
+   echo "EXAMPLE:"
+   echo "bash apps.sh -h   (Help function)"
+   echo "bash apps.sh      (Install the apps)"
+   echo
+}
+
+#Take the flags
+while getopts "hr:" flag
+do
+    case "${flag}" in
+        h) 
+         Help
+         exit
+        ;;
+        \?)
+         echo "Error: Invalid option"
+         exit
+         ;;
+    esac
+done
+
 #APPS INSTALLATION
 
 echo "UPDATE"
