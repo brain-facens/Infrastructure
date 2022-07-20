@@ -7,13 +7,15 @@ function Help
    # Displays Help
    echo "This script install GIT, CURL, GPARTED, HTOP, ZOOM, DISCOD, VSCODE." 
    echo
-   echo "Syntax: apps.sh [-h]"
+   echo "Syntax: apps.sh [-r|h]"
    echo "Options:"
    echo "-h     Help function"
+   echo "-r     Reboot the computer after the installations"
    echo
    echo "EXAMPLE:"
    echo "bash apps.sh -h   (Help function)"
-   echo "bash apps.sh      (Install the apps)"
+   echo "bash apps.sh -r   (Install the apps and reboot after)"
+   echo "bash apps.sh      (Install the apps without reboot)"
    echo
 }
 
