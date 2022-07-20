@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#CUDA INSTALLATION 11.6
+#APPS INSTALLATION
 
 function Help
 {
@@ -25,14 +25,14 @@ do
          Help
          exit
         ;;
+        r) rbt=${OPTARG};;
         \?)
          echo "Error: Invalid option"
          exit
-         ;;
+        ;;
     esac
 done
-
-#APPS INSTALLATION
+    
 
 echo "UPDATE"
 echo
@@ -83,5 +83,8 @@ echo "INSTALLING VISUAL STUDIO CODE"
 echo
 sudo apt install ./code_1.68.1-1655263094_amd64.deb
 
-echo "REBOOTING"
-reboot
+if [["$rbt" = true]]
+then
+    echo "REBOOTING"
+    reboot
+fi
