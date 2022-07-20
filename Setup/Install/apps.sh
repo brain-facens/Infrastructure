@@ -13,9 +13,9 @@ function Help
    echo "-r     Reboot the computer after the installations"
    echo
    echo "EXAMPLE:"
-   echo "bash apps.sh -h   (Help function)"
-   echo "bash apps.sh -r   (Install the apps and reboot after)"
-   echo "bash apps.sh      (Install the apps without reboot)"
+   echo "bash apps.sh -h      (Help function)"
+   echo "bash apps.sh -r true (Install the apps and reboot after)"
+   echo "bash apps.sh         (Install the apps without reboot)"
    echo
 }
 
@@ -27,7 +27,7 @@ do
          Help
          exit
         ;;
-        r) rbt=${OPTARG};;
+        r) rbt=true;;
         \?)
          echo "Error: Invalid option"
          exit
@@ -85,7 +85,7 @@ echo "INSTALLING VISUAL STUDIO CODE"
 echo
 sudo apt install ./code_1.68.1-1655263094_amd64.deb
 
-if [["$rbt" = true]]
+if [[ $rbt = true ]]
 then
     echo "REBOOTING"
     reboot
