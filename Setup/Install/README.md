@@ -1,4 +1,8 @@
 # **INSTALLATION TO LINUX UBUNTU 18.04 LTS**
+
+## **USAGE**
+- Follow this [link](https://github.com/brain-facens/Documentation/tree/main/Infrastructure/Setup) to see the tutorial and learn how to use this scripts.
+
 -------------------------------------
 ## **APPS SETUP**
 - Installation some famous apps that I always use:
