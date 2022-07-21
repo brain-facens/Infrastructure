@@ -1,16 +1,4 @@
 # **INSTALLATION TO LINUX UBUNTU 18.04 LTS**
-
-## **USAGE**
-```
-Syntax: file_bash.sh [-h]
-Options:
--h     Help function
-       If don't pass any flag, the bash will be ran.
-
-EXAMPLE:
-bash file_bash.sh -h  (Help function)
-bash file_bash.sh     (Ran the bash)
-```
 -------------------------------------
 ## **APPS SETUP**
 - Installation some famous apps that I always use:
