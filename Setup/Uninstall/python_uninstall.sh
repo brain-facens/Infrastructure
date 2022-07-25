@@ -45,6 +45,7 @@ then
     sudo apt-get purge python$version
     sudo apt-get purge --auto-remove python$version
     sudo rm -r /usr/local/lib/python$version 
+    sudo rm -r /etc/python$version
     echo 
     echo "Test:"
     python$version --version
