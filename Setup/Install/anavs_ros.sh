@@ -7,14 +7,26 @@ function Help
    # Displays Help
    echo "This script install Anavs ROS package." 
    echo
-   echo "Syntax: anavs_ros.sh [-h]"
+   echo "Syntax: anavs_ros.sh [-h][PATH TO CATKIN WORKSPACE]"
    echo "Options:"
    echo "-h     Help function"
    echo
    echo "EXAMPLE:"
-   echo "bash anavs_ros.sh -h   (Help function)"
-   echo "bash anavs_ros.sh      (Install Anavs ROS package)"
+   echo "bash anavs_ros.sh -h           (Help function)"
+   echo "bash anavs_ros.sh ~/catkin_ws/ (Install Anavs ROS package)"
    echo
+}
+
+function main
+{
+    echo "INSTALLING ANAVS-ROS-ADAPTE"
+    echo
+    cd $1src/
+    git clone https://github.com/brain-facens/anavs-ros-adapter.git
+    cd ../
+    rosdep install --from-paths src --ignore-src -r -y
+    catkin_make
+    source ./devel/setup.bash
 }
 
 #Take the flags
@@ -32,11 +44,4 @@ do
     esac
 done
 
-echo "INSTALLING ANAVS-ROS-ADAPTE"
-echo
-cd ~/catkin_ws/src/
-git clone https://github.com/brain-facens/anavs-ros-adapter.git
-cd ../
-rosdep install --from-paths src --ignore-src -r -y
-catkin_make
-source ./devel/setup.bash
+main $1
