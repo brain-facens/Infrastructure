@@ -7,7 +7,7 @@ function Help
    # Displays Help
    echo "This script install Anavs ROS package." 
    echo
-   echo "Syntax: anavs_ros.sh [-h][PATH TO CATKIN WORKSPACE]"
+   echo "Syntax: anavs_ros.sh [-h][PATH]"
    echo "Options:"
    echo "-h     Help function"
    echo
