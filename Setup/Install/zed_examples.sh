@@ -12,9 +12,21 @@ function Help
    echo "-h     Help function"
    echo
    echo "EXAMPLE:"
-   echo "bash zed_examples.sh -h   (Help function)"
-   echo "bash zed_examples.sh      (Install Zed Examples ROS package)"
+   echo "bash zed_examples.sh -h           (Help function)"
+   echo "bash zed_examples.sh ~/catkin_ws/ (Install Zed Examples ROS package)"
    echo
+}
+
+function main
+{
+    echo "INSTALLING ZED EXAMPLES ROS PACKAGE"
+    echo
+    cd $1src/
+    git clone https://github.com/stereolabs/zed-ros-examples.git
+    cd ..
+    rosdep install --from-paths src --ignore-src -r -y
+    catkin_make -DCMAKE_BUILD_TYPE=Release
+    source ./devel/setup.bash
 }
 
 #Take the flags
@@ -32,11 +44,4 @@ do
     esac
 done
 
-echo "INSTALLING ZED EXAMPLES ROS PACKAGE"
-echo
-cd ~/catkin_ws/src/
-git clone https://github.com/stereolabs/zed-ros-examples.git
-cd ..
-rosdep install --from-paths src --ignore-src -r -y
-catkin_make -DCMAKE_BUILD_TYPE=Release
-source ./devel/setup.bash
+main $1
